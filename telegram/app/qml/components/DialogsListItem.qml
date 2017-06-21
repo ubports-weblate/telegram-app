@@ -74,7 +74,7 @@ ListItem {
                             text: i18n.tr("Are you sure you want to leave this chat?"),
                             onAccept: function() {
                                 pageStack.clear()
-                                telegram.messagesDeleteHistory(dialogId, true)
+                                telegram.messagesDeleteHistory(dialogId, true, !isChat)
                             }
                         }
                     );
@@ -90,7 +90,7 @@ ListItem {
                         null, {
                             text: i18n.tr("Are you sure you want to clear history?"),
                             onAccept: function() {
-                                telegram.messagesDeleteHistory(dialogId, false)
+                                telegram.messagesDeleteHistory(dialogId, false, !isChat)
                             }
                         }
                     );
